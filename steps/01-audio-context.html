@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Audio — 02 First Sound</title>
+    <title>Web Audio — 01 Audio Context</title>
     <style>
         /* ── reset ── */
         *,
@@ -57,9 +57,9 @@
 
 <body>
 
-    <h1>Web Audio 02 — First Sound</h1>
+    <h1>Web Audio 01 — Audio Context</h1>
 
-    <p>Add an Oscillator node to generate sound</p>
+    <p>Create an Audio Context to initialize the Web Audio API</p>
 
     <div id="ui">
         <!-- controls will go here step by step -->
@@ -77,15 +77,6 @@
 
         btn.addEventListener('click', () => {
             console.log('button clicked — audio coming soon');
-            if (ctx.state === 'suspended') ctx.resume();
-
-            const osc = ctx.createOscillator();
-            osc.type = 'sine';
-            osc.frequency.value = 220;
-
-            osc.connect(ctx.destination);
-            osc.start();
-            osc.stop(ctx.currentTime + 0.5);
         });
     </script>
 
