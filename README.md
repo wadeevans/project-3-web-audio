@@ -72,6 +72,7 @@ osc.stop(ctx.currentTime + 1);
 
 | File | Topic |
 |---|---|
-| `steps/01-skeleton.html` | Page structure, button, console check |
-| `steps/02-first-sound.html` | AudioContext, OscillatorNode, first sound |
+| `steps/00--skeleton.html` | Base Page structure |
+| `steps/01-audio-context.html` | Audio Context, initialise Web Audio API|
+| `steps/02-first-sound.html` | OscillatorNode, first sound |
 | `steps/03-turn-it-down.html` | GainNode, volume control |
