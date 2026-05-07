@@ -70,7 +70,7 @@ osc.stop(ctx.currentTime + 1);
 
 ## Steps
 
-| | File | Topic |
+| File | Topic |
 |---|---|
 | `steps/00-skeleton.html` | Base page structure |
 | `steps/01-audio-context.html` | AudioContext, initialise Web Audio API |
