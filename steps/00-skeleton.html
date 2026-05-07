@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Audio — 02 First Sound</title>
+    <title>Web Audio — 00 Skeleton</title>
     <style>
         /* ── reset ── */
         *,
@@ -57,9 +57,9 @@
 
 <body>
 
-    <h1>Web Audio 02 — First Sound</h1>
+    <h1>Web Audio API skeleton html</h1>
 
-    <p>Add an Oscillator node to generate sound</p>
+    <p>The base page structure — starting point for all steps.</p>
 
     <div id="ui">
         <!-- controls will go here step by step -->
@@ -71,21 +71,11 @@
         // Nodes go here
         // Event listeners go here
 
-        const ctx = new AudioContext();
 
         const btn = document.getElementById('btn-play');
 
         btn.addEventListener('click', () => {
             console.log('button clicked — audio coming soon');
-            if (ctx.state === 'suspended') ctx.resume();
-
-            const osc = ctx.createOscillator();
-            osc.type = 'sine';
-            osc.frequency.value = 220;
-
-            osc.connect(ctx.destination);
-            osc.start();
-            osc.stop(ctx.currentTime + 0.5);
         });
     </script>
 
