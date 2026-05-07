@@ -30,49 +30,11 @@ button.addEventListener('click', () => {
 
 ---
 
-## 2. Your First Sound — OscillatorNode
 
-An `OscillatorNode` generates a periodic waveform. It is a source node —
-nothing connects into it.
-
-```javascript
-const osc = ctx.createOscillator();
-osc.type = 'sine';         // 'sine' | 'square' | 'sawtooth' | 'triangle'
-osc.frequency.value = 440; // Hz — A4
-
-osc.connect(ctx.destination);
-osc.start();
-osc.stop(ctx.currentTime + 1);
-```
-
-Oscillators are one-shot. Once stopped, create a new one. Nodes are cheap.
-
----
-
-## 3. GainNode — Volume Control
-
-Raw oscillator output is loud. A `GainNode` scales amplitude. `1.0` = unity, `0.0` = silence.
-
-```javascript
-const osc  = ctx.createOscillator();
-const gain = ctx.createGain();
-
-gain.gain.value = 0.3; // 30% volume
-
-osc.connect(gain);
-gain.connect(ctx.destination);
-
-osc.start();
-osc.stop(ctx.currentTime + 1);
-```
-
----
 
 ## Steps
 
-| | File | Topic |
+| File | Topic |
 |---|---|
 | `steps/00-skeleton.html` | Base page structure |
 | `steps/01-audio-context.html` | AudioContext, initialise Web Audio API |
-| `steps/02-first-sound.html` | OscillatorNode, first sound |
-| `steps/03-turn-it-down.html` | GainNode, volume control |

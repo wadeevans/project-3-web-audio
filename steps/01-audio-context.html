@@ -61,9 +61,14 @@
 
     <p>Create an Audio Context to initialize the Web Audio API</p>
 
+    <p>Open the browser console, type <code>ctx</code> and hit enter. Find <code>
+        state</code> in the object — it should read <code>suspended</code>.
+        Click the button then check again — it should read <code>running</code>.</p>
+
     <div id="ui">
         <!-- controls will go here step by step -->
         <button id="btn-play">Play</button>
+
     </div>
 
     <script>
@@ -77,6 +82,9 @@
 
         btn.addEventListener('click', () => {
             console.log('button clicked — audio coming soon');
+            if (ctx.state === 'suspended') {
+                ctx.resume();
+            }
         });
     </script>
 
