@@ -68,6 +68,26 @@ osc.stop(ctx.currentTime + 1);
 
 ---
 
+## 4. Constructor Style — Modern Syntax
+
+The factory methods (`ctx.createOscillator()`) are legacy. The modern approach 
+uses constructors directly, passing options in one go:
+
+```javascript
+// Legacy factory style
+const osc = ctx.createOscillator();
+osc.type = 'sine';
+osc.frequency.value = 220;
+
+// Modern constructor style
+const osc = new OscillatorNode(ctx, { type: 'sine', frequency: 220 });
+const gain = new GainNode(ctx, { gain: 0.3 });
+```
+
+All Audio nodes follow this pattern: `new NodeName(ctx, { options })`.
+
+---
+
 ## Steps
 
 | File | Topic |
@@ -76,3 +96,4 @@ osc.stop(ctx.currentTime + 1);
 | `steps/01-audio-context.html` | AudioContext, initialise Web Audio API |
 | `steps/02-first-sound.html` | OscillatorNode, first sound |
 | `steps/03-turn-it-down.html` | GainNode, volume control |
+| `steps/04-constructor-style.html` | Modern constructor syntax |
